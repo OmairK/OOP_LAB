@@ -27,9 +27,13 @@ public:
     {
         num = num + 3;
     }
-    void show()
+    int wasShow()
     {
-        cout << "Number is: " << num;
+        cout<<"The number was: "<<num<<endl;
+    }
+    int show()
+    {
+        cout<<"The number is: "<<num<<endl;
     }
 };
 
@@ -42,9 +46,13 @@ class BinaryOperatorOverloading{
     {
         return obj.num + num;
     }
+    int wasShow()
+    {
+        cout<<"The number was: "<<num<<endl;
+    }
     int show()
     {
-        cout<<"The number is: "<<num;
+        cout<<"The number is: "<<num<<endl;
     }
 
 };
@@ -52,14 +60,17 @@ class BinaryOperatorOverloading{
 int main()
 {
     int temp;
-    int ch;
-    cout << "\n1.Unary Operator" << endl
+    int ch = 0;
+    
+    
+    while (ch != 3)
+    
+    {   
+        
+        cout << "\n1.Unary Operator" << endl
          << "2.Binary Operator" << endl
          << "3.Exit" << endl;
-    cin >> ch;
-
-    while (ch != 3)
-    {
+         cin >> ch;
         switch (ch)
         {
         case 1:
@@ -67,10 +78,11 @@ int main()
             cout << "Enter the number: " << endl;
             cin >> temp;
             UnaryOperatorOverloading obj = UnaryOperatorOverloading(temp);
-            obj.show();
+            obj.wasShow();
             --obj;
             obj.show();
-        }break;
+            break;
+        }
         case 2:
         {   cout<<"Enter the first number:  "<<endl;
             cin>>temp;
@@ -80,9 +92,9 @@ int main()
             cin>>temp;
             BinaryOperatorOverloading obj2 = BinaryOperatorOverloading(temp);
             cout<<"This is binary * operator overloading: "<<obj1*obj2;
-            
+            break;    
         }
-        break;
+        
         }
     }
     readName("name.txt");

@@ -68,17 +68,7 @@ public:
         }
         return temp;
     }
-    // NewString operator+(string t)
-    // {
-        // NewString tempo;
-        // int sizeStr = t.length() int sizeOg = this->stringSize();
-        // int sizeTotal = sizeStr + sizeOg;
-        // tempo->a = new char[sizeTotal];
-        // for (int i = 0; i < sizeTotal; i++)
-        // {
-// 
-        // }
-    // }
+
     NewString operator=(NewString t) //Asignment operator
     {
         this->a = t.a;
@@ -109,8 +99,8 @@ public:
 };
 int main()
 {
-    string greet = "Hello world";
-    string shoot = "How is your day?";
+    string greet = "Hello world\n";
+    string shoot = "How is your day?\n";
     NewString omair(greet);
     NewString ok(shoot);
     NewString ok2;
