@@ -1,5 +1,20 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
+void readName(string filename){
+    ifstream file;
+    file.open(filename, ios::in);
+    string line;
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            cout << line << endl;
+        }
+    }
+    file.close();
+    
+}
 
 
 class Account{
@@ -126,6 +141,7 @@ int main(){
         
 
     }
+    readName("name.txt");
     return 0;
 
 }

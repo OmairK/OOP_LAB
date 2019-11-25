@@ -1,5 +1,20 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
+void readName(string filename)
+{
+    ifstream file;
+    file.open(filename, ios::in);
+    string line;
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            cout << line << endl;
+        }
+    }
+    file.close();
+};
 class Figure
 {
 private:
@@ -8,27 +23,38 @@ private:
 
 public:
     Figure(double a, double b) : dim1(a), dim2(b) {}
-    Figure(){}
+    Figure() {}
     virtual void CalcArea()
     {
-        cout << "This the base class call" << endl;
+        cout << "This the base class area call" << endl;
     }
-;} 
+    void Perimeter()
+    {
+        cout << "This is the base class perimeter call" << endl;
+    }
+};
 class Rectangle : public Figure
 {
-    public:
-    
+public:
     void ClacArea()
     {
-        cout << "This the derived class call" << endl;
+        cout << "This the derived class area call" << endl;
     }
-
+    void Perimeter()
+    {
+        cout << "This is the derived class perimeter class"<<endl;
+    }
 };
 
-void main()
+int main()
 {
     Figure f;
     Rectangle r;
     Figure *ptr;
+    ptr = &r;
+    ptr->CalcArea();
+    ptr->Perimeter();
 
+    readName("name.txt");
+    return 0;
 }

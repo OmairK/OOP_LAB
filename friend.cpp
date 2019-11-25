@@ -1,5 +1,20 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
+void readName(string filename){
+    ifstream file;
+    file.open(filename, ios::in);
+    string line;
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            cout << line << endl;
+        }
+    }
+    file.close();
+    
+}
 
 
 
@@ -45,6 +60,7 @@ int main(){
     box.display();
     cout<<"The surface area is "<<surfaceArea(box)<<endl;
     cout<<"The volume is "<<volume(box)<<endl;
+    readName("name.txt");
     return 1;
 
 }

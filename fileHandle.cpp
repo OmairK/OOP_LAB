@@ -1,8 +1,21 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-
 using namespace std;
+void readName(string filename){
+    ifstream file;
+    file.open(filename, ios::in);
+    string line;
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            cout << line << endl;
+        }
+    }
+    file.close();
+    
+}
 
 int readAlphanum(char *source)
 {
@@ -96,6 +109,7 @@ int main(int argc, char **argv)
             readAlphanum(source);
             break;
         case 4:
+            readName("name.txt");
             return 0;
         }
     }
