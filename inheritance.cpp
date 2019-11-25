@@ -9,7 +9,7 @@ class Shape{
         width = a;
         length = b;
     }
-    void display(){
+    virtual void display(){
         cout << "Parent class function called and the shape maybe a circle"<<endl;
         
     }
