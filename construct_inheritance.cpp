@@ -114,6 +114,7 @@ int main()
 {
     Gamma x;
     cout << x.Alpha::getC() << endl;
+    readName("name.txt");
 
     return 0;
 }

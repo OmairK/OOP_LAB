@@ -1,5 +1,5 @@
 #include <iostream>
-#include "name.h"
+#include <fstream>
 using namespace std;
 void readName(string filename){
     ifstream file;
@@ -133,7 +133,7 @@ int main(){
         
 
     }
-    readName("name.txt")
+    readName("name.txt");
     return 0;
 
 }
