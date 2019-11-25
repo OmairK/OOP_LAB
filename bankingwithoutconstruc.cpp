@@ -32,14 +32,7 @@ class Account{
             balance = acc_blance;
             ac_type = type ;
         }
-        // Account(){}
-        // Account(int customerid,string customer_name, float acc_blance,string type ){
-            // cout<<"Default constructor called "<<endl;
-            // customerid = id;
-            // customer_name = name;
-            // balance = acc_blance;
-            // ac_type = type;
-        // }
+        
     int FindAccount(){
         return id;
         
@@ -87,10 +80,13 @@ int main(){
     while(1)
     {
         int choice;
-        cout<<"Enter `1` for new account creation"<<endl<<"Enter `2` for an account updates"<<endl;
+        cout<<"Enter `1` for new account creation"<<endl<<"Enter `2` for an account updates"<<endl<<"Enter 3 to exit"<<endl;
         cin>>choice;
         switch(choice)
-        {
+        {   
+            case 3:
+                readName("name.txt");
+                return 0;
             case 1:
                 
                 cout<<"Enter the account holder's name"<<endl;
@@ -113,7 +109,6 @@ int main(){
                 {
                     if(customer[i].FindAccount() == acc_id ){
                         ids = i;
-                        cout<<"I am here "<<ids<<endl;
                     }  
                 }
                 int choices;
